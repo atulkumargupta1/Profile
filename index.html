@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atul Kumar Gupta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* --- CSS Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* --- Premium Dark 3D Background --- */
+        body {
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #0f2027, #2a0815, #090919);
+            background-size: 400% 400%;
+            animation: gradientBG 16s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+            overflow-x: hidden;
+            padding-bottom: 80px; 
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Main Card --- */
+        .profile-card {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            width: 100%;
+            max-width: 420px; 
+            transition: transform 0.3s ease;
+        }
+
+        /* --- Profile Photo --- */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease;
+        }
+        .profile-img:hover { transform: scale(1.05); }
+
+        /* --- Typography --- */
+        .profile-card h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .profile-card p {
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* --- Social Buttons --- */
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn i { margin-right: 12px; font-size: 20px; }
+
+        .social-btn:hover {
+            background: white;
+            color: #1a1a1a;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: white;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08); 
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 1.5px;      
+            text-transform: uppercase;
+        }
+
+        /* --- Floating Save Contact Button (Hidden Initially) --- */
+        .floating-contact-btn {
+            position: fixed;
+            bottom: -100px; /* Chupa hua */
+            left: 50%;
+            transform: translateX(-50%);
+            
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 1000;
+            
+            transition: bottom 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        .floating-contact-btn.show {
+            bottom: 25px;
+        }
+
+        .floating-contact-btn:hover {
+            background: white;
+            color: black;
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- Mobile Adjustments --- */
+        @media screen and (max-width: 480px) {
+            .profile-card { padding: 30px 20px; }
+            .profile-img { width: 130px; height: 130px; }
+            .profile-card h1 { font-size: 24px; }
+            .social-btn { padding: 12px; font-size: 16px; }
+            .footer { font-size: 8px; }
+            .floating-contact-btn { width: 85%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        
+        <img src="https://i.postimg.cc/gj1d850j/IMG-20251125-202523-662.webp" alt="Profile" class="profile-img">
+        
+        <h1>Atul Kumar Gupta</h1>
+        <p>Lawyer | Pharmacist | Businessman</p>
+
+        <div class="social-links">
+            <a href="mailto:atulkumargupta.contact@gmail.com" class="social-btn">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://www.linkedin.com/in/atulkumargupta-/" target="_blank" class="social-btn">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="https://instagram.com/atulkumargupta_" target="_blank" class="social-btn">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.facebook.com/share/1EXHUQY6oD/" target="_blank" class="social-btn">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://x.com/atulkumargupta_/" target="_blank" class="social-btn">
+                <i class="fab fa-x-twitter"></i> Twitter
+            </a>
+        </div>
+
+        <div class="footer">
+            © 2025 Atul Kumar Gupta. All Rights Reserved.
+        </div>
+
+    </div>
+
+    <div class="floating-contact-btn" id="contactBtn" onclick="downloadVCard()">
+        <i class="fas fa-user-plus"></i> Save Contact
+    </div>
+
+    <script>
+        // --- INFINITE LOOP ANIMATION LOGIC ---
+        window.onload = function() {
+            startAnimationLoop();
+        };
+
+        function startAnimationLoop() {
+            const btn = document.getElementById('contactBtn');
+
+            function showButton() {
+                // Button Up
+                btn.classList.add('show');
+
+                // 3 sec wait -> Button Down
+                setTimeout(() => {
+                    btn.classList.remove('show');
+                    
+                    // 2 sec wait -> Loop again
+                    setTimeout(showButton, 2000); 
+                }, 3000);
+            }
+
+            // Initial Delay 2 sec
+            setTimeout(showButton, 2000);
+        }
+
+        // --- DOWNLOAD VCF LOGIC (Updated with Phone & Name Parts) ---
+        function downloadVCard() {
+            const vCardContent = `BEGIN:VCARD
+VERSION:3.0
+N:Gupta;Atul;Kumar;;
+FN:Atul Kumar Gupta
+TITLE:Lawyer | Pharmacist | Businessman
+TEL;TYPE=WORK,VOICE:+919907722885
+EMAIL;TYPE=WORK,INTERNET:atulkumargupta.contact@gmail.com
+END:VCARD`;
+
+            const blob = new Blob([vCardContent], { type: "text/vcard" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "Atul_Kumar_Gupta.vcf"; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+</body>
+</html>
